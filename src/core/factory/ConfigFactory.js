@@ -1,11 +1,12 @@
 class ConfigFactory {
   constructor({ name }) {
-    this.config_name = name;
+    this.name = name;
     this.data = [];
+    this.content = null;
   }
 
   resolve() {
-    const configurationInformations = eval("factory" + this.config_name.capitalize())
+    const configurationInformations = eval("factory" + this.name.capitalize())
 
     this.data = configurationInformations.map(conf => new FileClass(conf.name, conf.path))
 

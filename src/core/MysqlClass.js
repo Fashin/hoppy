@@ -1,7 +1,7 @@
 import mysql from 'mysql';
 
 class MysqlClass {
-  constructor(host, user, psswd, database) {
+  constructor({host, user, psswd, database}) {
     this.host = host;
     this.user = user;
     this.psswd = psswd;

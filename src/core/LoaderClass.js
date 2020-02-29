@@ -1,14 +1,18 @@
 import fs from 'fs';
 
 class LoaderClass {
-  constructor(listFiles) {
-      this.listFiles = listFiles;
+  constructor(files) {
+      this.files = files;
   }
 
-  run() {
-    this.listFiles.map(path => {
-        const file = fs.readFileSync(this.listFiles[0], "utf8")
-        console.log(JSON.parse(file));
+  get() {
+    return this.files.map(file => {
+      const content = fs.readFileSync(file.path, "utf8")
+
+      return ({
+        name: file.name,
+        content: JSON.parse(content)
+      })
     })
   }
 }

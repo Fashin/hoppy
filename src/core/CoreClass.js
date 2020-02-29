@@ -1,11 +1,10 @@
 class CoreClass {
   constructor() {
-    this.core = this.executeFactorys(listFactorys)
+    this.core = this.executeFactorys(listFactorys);
 
-    console.log(this.core.getData('config'));
-      // this.loader = new LoaderClass([
-      //   './config/database.json'
-      // ]);
+    const configContent = new LoaderClass(this.core.getData('config'));
+
+    this.core.setData('config', configContent.get());
   }
 
   executeFactorys(factorys) {
@@ -18,6 +17,6 @@ class CoreClass {
   }
 
   run() {
-      // this.loader.run();
+      
   }
 }
