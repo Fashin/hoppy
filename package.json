@@ -1,0 +1,34 @@
+{
+  "name": "hoppy",
+  "version": "1.0.0",
+  "description": "A custom vocal assistant",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "clear": "rm -rf ./bin; mkdir bin",
+    "build": "yarn clear; babel src --compact true --out-file bin/build-hoppy.js",
+    "compile": "babel src --out-file bin/hoppy.js",
+    "execute": "yarn compile; node bin/hoppy.js",
+    "re": "yarn clear; yarn execute"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fashin/hoppy.git"
+  },
+  "author": "cbeauvoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fashin/hoppy/issues"
+  },
+  "homepage": "https://github.com/Fashin/hoppy#readme"
+}

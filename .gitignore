@@ -1,0 +1,6 @@
+bin/
+node_modules/
+yarn.lock
+yarn-error.log
+config/
+!src/core/config
